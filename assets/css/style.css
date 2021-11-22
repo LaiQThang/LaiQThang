@@ -5,6 +5,7 @@
     box-sizing: border-box;
 }
 html{
+    scroll-behavior: smooth;
     font-family: Arial, Helvetica, sans-serif;
 }
 
@@ -61,6 +62,9 @@ html{
 }
 .mt-16{
     margin-top: 16px !important;
+}
+.mt-32{
+    margin-top: 32px;
 }
 
 
@@ -128,20 +132,32 @@ html{
 .nav-arrow-down{
     font-size: 14px;
 }
-
+#header .mobile-search-btn,
 #header .search-btn{
     float: right;
+    padding: 0 21px;
 }
+#header .menu-icon,
 #header .search-icon{
     color: #fff;
     font-size: 20px;
     line-height: 46px;
-    padding: 0 21px;
     cursor: pointer;
 }
-
+#header .mobile-search-btn:hover{
+    background-color: #ccc;
+}
+#header .mobile-search-btn:hover .menu-icon{
+    color: #000;
+}
 #header .search-btn:hover{
     background-color: #f44336;
+}
+#header .mobile-search-btn{
+    position: absolute;
+    top: 0;
+    right: 0;
+    display: none;
 }
 
 #slider{
@@ -179,9 +195,12 @@ html{
 
 #contents .content_section{
     width: 800px;
+    max-width: 100%;
     margin-left: auto;
     margin-right: auto;
     padding: 64px 0 112px;
+    padding-left: 16px;
+    padding-right: 16px;
 }
 #contents .section-heading{
     font-size: 30px;
@@ -205,7 +224,7 @@ html{
     line-height: 1.4;
 }
 #contents .member-list{
-    margin-top: 48px;
+    margin-top: 32px;
 }
 #contents .member-name{
     font-size: 15px;
@@ -257,7 +276,7 @@ html{
     margin-top: -3px; 
 }
 .place-list{
-    margin-top: 32px;
+    margin-top: 16px;
 }
 
 .place-img{
@@ -455,3 +474,58 @@ html{
         transform: translateY(0px);
     }
 }
+/* ----------------------------------------------------- */
+@media (max-width:740px){
+    .s-full-width,
+    .s-col-full{
+        width: 100% !important; 
+    }
+    .s-mt-8{
+       margin-top: 8px !important; 
+    }
+    #nav{
+        display: block;
+    }
+    #nav>li{
+        display: block;
+    }
+    #nav > li:first-child{
+        display: inline-block;
+    }
+    #nav .subnav{
+        position: initial; 
+    }
+    #nav .subnav a{
+        background: #333;
+        color: #fff;
+        padding: 5px 41px;
+    }
+    #nav li a{
+        padding: 1px 24px;
+    }
+    #header .search-btn{
+        display: none;
+    }
+    #header .mobile-search-btn{
+        display: block;
+    }
+    #header{
+        overflow: hidden;
+    }
+    #contents .member-item{
+        margin-top: 30px;
+        width: 100%;
+    }
+    #contents .member-img{
+        width: 60%;
+    }
+    /* #contact .contact-form .contact-line{
+        display: inline-flex;
+    } */
+    .contact-form{
+        margin-top: 16px;
+    }
+    
+}
+
+
